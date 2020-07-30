@@ -1,0 +1,21 @@
+.header {
+    height: 40px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.siteTitle {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #eee;
+    margin: 0;
+    padding: 0;
+}
+
+.navIcon {
+    height: 70%;
+    cursor: pointer;
+}
