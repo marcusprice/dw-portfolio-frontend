@@ -6,17 +6,3 @@
     column-gap: 16px;
     row-gap: 16px;
 }
-
-.listItem {
-    background-color: #222;
-    font-size: 2em;
-    font-weight: 700;
-    font-family: 'Roboto', sans-serif;
-    color: #eee;
-    margin: 0; padding: 0;
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-}

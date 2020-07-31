@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
+import GridItem from './GridItem';
 import styles from './GridNav.module.css';
 import axios from 'axios';
 
 const GridNav = () => {
     const [images, setImages] = useState({});
-    const API_DOMAIN = 'http://localhost:1337';
+    const domain = 'http://localhost:1337';
+
+    console.log(process.env.NEXT_PUBLIC_API_DOMAIN);
     useEffect(() => {
        axios.get('http://localhost:1337/section-images')
         .then(response => {
@@ -22,16 +25,14 @@ const GridNav = () => {
         })
     }, []);
 
-    console.log(images);
-
     return (
         <ul className={styles.container}>
-            <li style={{backgroundImage: 'url('+ API_DOMAIN + (images['music'] ? images['music']: '') + ')'}} className={styles.listItem}>MUSIC</li>
-            <li style={{backgroundImage: 'url('+ API_DOMAIN + (images['audio services'] ? images['audio services']: '') + ')'}} className={styles.listItem}>AUDIO SERVICES</li>
-            <li style={{backgroundImage: 'url('+ API_DOMAIN + (images['about'] ? images['about']: '') + ')'}} className={styles.listItem}>ABOUT</li>
-            <li style={{backgroundImage: 'url('+ API_DOMAIN + (images['support'] ? images['support']: '') + ')'}} className={styles.listItem}>SUPPORT</li>
-            <li style={{backgroundImage: 'url('+ API_DOMAIN + (images['shows'] ? images['shows']: '') + ')'}} className={styles.listItem}>SHOWS</li>
-            <li style={{backgroundImage: 'url('+ API_DOMAIN + (images['contact'] ? images['contact']: '') + ')'}} className={styles.listItem}>CONTACT</li>
+            <GridItem section={images['music']} sectionText="MUSIC" />
+            <GridItem section={images['audio services']} sectionText="AUDIO SERVICES" />
+            <GridItem section={images['about']} sectionText="ABOUT" />
+            <GridItem section={images['support']} sectionText="SUPPORT" />
+            <GridItem section={images['shows']} sectionText="SHOWS" />
+            <GridItem section={images['contact']} sectionText="CONTACT" />
         </ul>
     );
 }

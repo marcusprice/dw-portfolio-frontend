@@ -1,0 +1,26 @@
+.listItem {
+    cursor: pointer;
+    background-color: #222;
+    margin: 0; padding: 0;
+    list-style-type: none;
+    background-size: cover;
+    background-position: center center;
+}
+
+.textDiv {
+    background-color: rgb(34, 34, 34, .2);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    color: #eee;
+}
+
+.textDiv:hover {
+    background-color: rgb(34, 34, 34, .6);
+}
