@@ -15,6 +15,10 @@
     padding: 0;
 }
 
+.siteTitle:hover {
+    color: #aaa;
+}
+
 .navIcon {
     height: 70%;
     cursor: pointer;

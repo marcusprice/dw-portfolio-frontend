@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
         <ContentContainer navToggled={navToggled} >
           <Component {...pageProps} />
         </ContentContainer>
-        <Nav navToggled={navToggled} />
+        <Nav navToggled={navToggled} setNavToggled={setNavToggled}/>
       </Container>
     </>
   )

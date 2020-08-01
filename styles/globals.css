@@ -26,3 +26,8 @@ body {
     right: 10px;
   }
 }
+
+a {
+  text-decoration: none;
+  color: #eee;
+}

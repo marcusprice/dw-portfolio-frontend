@@ -1,0 +1,50 @@
+.heroContainter {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heroText {
+    width: 48%;
+    margin: 0;
+}
+
+.imageContainer {
+    background: #222;
+    width: 48%;
+    padding-top: 48%;
+    border: 4px #eee solid;
+    border-radius: 50%;
+    border-width: 4px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.heroImage {
+    width: 100%;
+    object-fit: cover;
+}
+
+.title, .heading, .description {
+    color: #eee;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.heading {
+    margin-top: 8px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.description {
+    margin-top: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}

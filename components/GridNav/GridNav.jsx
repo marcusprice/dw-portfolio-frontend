@@ -26,12 +26,12 @@ const GridNav = () => {
 
     return (
         <ul className={styles.container}>
-            <GridItem section={images['music']} sectionText="MUSIC" />
-            <GridItem section={images['audio services']} sectionText="AUDIO SERVICES" />
-            <GridItem section={images['about']} sectionText="ABOUT" />
-            <GridItem section={images['support']} sectionText="SUPPORT" />
-            <GridItem section={images['shows']} sectionText="SHOWS" />
-            <GridItem section={images['contact']} sectionText="CONTACT" />
+            <GridItem url="/music" section={images['music']} sectionText="MUSIC" />
+            <GridItem url="/audio_services" section={images['audio services']} sectionText="AUDIO SERVICES" />
+            <GridItem url="/about" section={images['about']} sectionText="ABOUT" />
+            <GridItem url="/support" section={images['support']} sectionText="SUPPORT" />
+            <GridItem url="/shows" section={images['shows']} sectionText="SHOWS" />
+            <GridItem url="/contact" section={images['contact']} sectionText="CONTACT" />
         </ul>
     );
 }
