@@ -19,3 +19,17 @@
     height: 70%;
     cursor: pointer;
 }
+
+@media (max-width: 640px) {
+    .siteTitle {
+        font-size: 24px;
+    }
+
+    .header  {
+        width: calc(100% - 20px);
+    }
+
+    .navIcon {
+        height: 60%;
+    }
+}

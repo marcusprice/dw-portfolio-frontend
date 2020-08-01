@@ -5,11 +5,10 @@ import axios from 'axios';
 
 const GridNav = () => {
     const [images, setImages] = useState({});
-    const domain = 'http://localhost:1337';
+    const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
 
-    console.log(process.env.NEXT_PUBLIC_API_DOMAIN);
     useEffect(() => {
-       axios.get('http://localhost:1337/section-images')
+       axios.get(apiDomain + '/section-images')
         .then(response => {
             //emtpy image object
             let imageObject = {};

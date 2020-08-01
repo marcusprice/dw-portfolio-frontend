@@ -6,3 +6,23 @@ body {
   margin: 0; padding: 0;
   background-color: #222;
 }
+
+.nav-menu-expanded {
+  left: 10px;
+}
+
+.content-container {
+  right: 20px;
+  opacity: 1;
+}
+
+.content-container-expanded {
+  right: 265px;
+  opacity: .25;
+}
+
+@media (max-width: 640px) {
+  .content-container {
+    right: 10px;
+  }
+}
