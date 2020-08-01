@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import ContentSection from '../components/ContentSection';
 import PageHero from '../components/PageHero';
 import axios from 'axios';
+import ContentBlock from '../components/ContentBlock';
 
 const About = () => {
     const [content, setContent] = useState({});
@@ -17,9 +18,19 @@ const About = () => {
             })
     }, []);
 
+    const bioText = content?.bio?.split('\n').filter(text => text !== '');
+
+    console.log(bioText);
     return (
         <ContentSection>
-            <PageHero title="ABOUT" heading={content?.heading} description={content?.description} imgURL={apiDomain + content?.section_image?.image?.url}/>
+            <PageHero 
+                title="ABOUT" 
+                heading={content?.heading} 
+                description={content?.description} 
+                imgURL={apiDomain + content?.section_image?.image?.url} 
+            />
+
+            <ContentBlock title="Bio" text={bioText} />
         </ContentSection>
     );
 }

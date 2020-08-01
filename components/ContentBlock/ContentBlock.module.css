@@ -1,0 +1,23 @@
+.contentBlock {
+    background-color: rgb(51, 51, 51);
+    box-shadow: rgb(17, 17, 17) 0px 4px 6px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 32px 0px 0px;
+    border-radius: 10px;
+    padding: 32px;
+}
+
+.title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #eee;
+    margin: 0px 0px 8px;
+}
+
+.paragraphText {
+    font-family: 'Open Sans', sans-serif;
+    color: #ccc;
+    line-height: 1.5;
+}
