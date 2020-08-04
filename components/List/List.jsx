@@ -1,36 +1,26 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios'; 
+import styles from './List.module.css';
+import { randomInt } from '../../utils/';
+import checkmark from '../../public/assets/checkmark.png';
 
 const List = props => {
-    const [list, setList] = useState([]);
-    const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
-
-    useEffect(() => {
-        axios.get(apiDomain + props.apiEndpoint)
-            .then(result => {
-                console.log(result.data);
-                setList(result.data.accomplishments);
-            })  
-            .catch(err => {
-                console.error(err);
-            })
-    }), [];
-
     let output = '';
-    if(list) {
-        output = list.map((item, i) => {
-            return(
-                <li key={i}>{item.text}</li>
+
+    if(props.items) {
+        output = props.items.map(item => {
+        
+            return (
+                <li className={styles.listItem} key={randomInt(50000)}>
+                    <img className={styles.checkmark} src={checkmark} />
+                    {item}
+                </li>  
             );
-        })
+        });
     }
 
     return(
-        <div>
-            <ul>
-                {output}
-            </ul>
-        </div>
+        <ul className={styles.unorderedList}>
+            {output}
+        </ul>
     );
 }
 

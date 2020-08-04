@@ -21,6 +21,25 @@ body {
   opacity: .25;
 }
 
+.headingOne, .headingTwo {
+  color: #eee;
+  margin: 0; padding: 0;
+}
+
+.headingOne {
+  margin-top: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.headingTwo {
+  margin-top: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+
 @media (max-width: 640px) {
   .content-container {
     right: 10px;

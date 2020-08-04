@@ -15,3 +15,10 @@
     color: #eee;
     margin: 0px 0px 8px;
 }
+
+@media (max-width: 640px) {
+    .container {
+        width: 100%;
+        padding: 16px;
+    }
+}

@@ -1,0 +1,1 @@
+export const randomInt = max => Math.ceil(Math.random() * max);

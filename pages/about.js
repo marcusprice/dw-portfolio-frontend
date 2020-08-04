@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
+import { randomInt } from '../utils/';
+import axios from 'axios';
 import ContentSection from '../components/ContentSection';
 import PageHero from '../components/PageHero';
-import axios from 'axios';
 import ContentBlock from '../components/ContentBlock';
 import DualContentBlock from '../components/DualContentBlock';
 import DualBlockContainer from '../components/DualBlockContainer';
@@ -9,6 +10,8 @@ import List from '../components/List';
 
 const About = () => {
     const [content, setContent] = useState({});
+    const [jobs, setJobs] = useState([]);
+    const [schools, setSchools] = useState([]);
     const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
 
     useEffect(() => {
@@ -18,10 +21,51 @@ const About = () => {
             })
             .catch(err => {
                 console.error(err);
+            });        
+            
+        axios.get(apiDomain + '/jobs')
+            .then(result => {
+                setJobs(result.data)
             })
+            .catch(err => {
+                console.error(err);
+            });
+
+        axios.get(apiDomain + '/schools')
+            .then(result => {
+                setSchools(result.data)
+            })
+            .catch(err => {
+                console.error(err);
+            });
+            
     }, []);
 
     const bioText = content?.bio?.split('\n').filter(text => text !== '');
+
+    const handleAccomplishments = arr => {
+
+        let output = '';
+
+        if(arr.length > 0) {
+            output = arr.map(item => {
+                const accomplishments = item.accomplishments.map(accomplishment => accomplishment.text);
+                return (
+                    <Fragment key={randomInt(50000)}>
+                        <h5 className="headingOne" key={randomInt(50000)}>{item.heading}</h5>
+                        <h5 className="headingTwo" key={randomInt(50000)}>{item.name}</h5>
+                        <List 
+                            key={randomInt(50000)} 
+                            items={accomplishments} 
+                            heading={item.heading} 
+                            name={item.name} />
+                    </Fragment>
+                );
+            });
+        }
+
+        return output;
+    }
     
     return (
         <ContentSection>
@@ -35,15 +79,13 @@ const About = () => {
             <ContentBlock title="Bio" text={bioText} />
 
             <DualBlockContainer>
-
                 <DualContentBlock title="Education">
-                    <List apiEndpoint="/schools" />
+                    {handleAccomplishments(schools)}
                 </DualContentBlock>
 
                 <DualContentBlock title="Work Experience">
-                    <List apiEndpoint="/schools" />
+                    {handleAccomplishments(jobs)}                    
                 </DualContentBlock>
-
             </DualBlockContainer>
         </ContentSection>
     );
