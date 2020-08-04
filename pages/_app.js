@@ -8,16 +8,17 @@ import Nav from '../components/Nav';
 
 function MyApp({ Component, pageProps }) {
   const [navToggled, setNavToggled] = useState(false);
+  const [view, setView] = useState('landing');
 
   return (
     <>
       <PageHead />
       <Container>
-        <Header navToggled={navToggled} setNavToggled={setNavToggled} />
-        <ContentContainer navToggled={navToggled} >
-          <Component {...pageProps} />
+        <Header navToggled={navToggled} setNavToggled={setNavToggled}  view={view} setView={setView} />
+        <ContentContainer navToggled={navToggled} setNavToggled={setNavToggled} view={view}>
+          <Component {...pageProps} setView={setView}/>
         </ContentContainer>
-        <Nav navToggled={navToggled} setNavToggled={setNavToggled}/>
+        <Nav navToggled={navToggled} setNavToggled={setNavToggled} setView={setView} />
       </Container>
     </>
   )

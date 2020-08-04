@@ -19,6 +19,7 @@ body {
 .content-container-expanded {
   right: 265px;
   opacity: .25;
+  cursor: pointer;
 }
 
 .headingOne, .headingTwo {
@@ -49,6 +50,10 @@ body {
 a {
   text-decoration: none;
   color: #eee;
+}
+
+.headingOne:not(:first-of-type) {
+  margin-top: 32px;
 }
 
 @media (min-width: 640px) {

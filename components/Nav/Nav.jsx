@@ -17,7 +17,7 @@ const Nav = props => {
     return(
         <nav className={styles.nav} style={{right: handleToggle()}}>
             <ul className={styles.navUL}>
-                <Link href="/about"><a onClick={() => {setNavToggled(false)}}><li className={styles.listItem}>MUSIC</li></a></Link>
+                <Link href="/about"><a onClick={() => {setNavToggled(false); setView('about')}}><li className={styles.listItem}>MUSIC</li></a></Link>
                 <Link href="/audio_services"><a onClick={() => {setNavToggled(false)}}><li className={styles.listItem}>AUDIO SERVICES</li></a></Link>
                 <Link href="/about"><a onClick={() => {setNavToggled(false)}}><li className={styles.listItem}>ABOUT</li></a></Link>
                 <Link href="/support"><a onClick={() => {setNavToggled(false)}}><li className={styles.listItem}>SUPPORT</li></a></Link>

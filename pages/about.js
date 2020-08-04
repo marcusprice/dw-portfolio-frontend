@@ -76,7 +76,7 @@ const About = () => {
                 imgURL={apiDomain + content?.section_image?.image?.url}  
             />
 
-            <ContentBlock title="Bio" text={bioText} />
+            <ContentBlock title="Biography" text={bioText} />
 
             <DualBlockContainer>
                 <DualContentBlock title="Education">

@@ -1,9 +1,10 @@
 .container {
     display: flex;
     justify-content: space-between; 
+    align-items: flex-start;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .container {
         display: block;
     }

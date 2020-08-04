@@ -3,7 +3,7 @@ import GridItem from './GridItem';
 import styles from './GridNav.module.css';
 import axios from 'axios';
 
-const GridNav = () => {
+const GridNav = props => {
     const [images, setImages] = useState({});
     const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
 
@@ -26,12 +26,12 @@ const GridNav = () => {
 
     return (
         <ul className={styles.container}>
-            <GridItem url="/music" section={images['music']} sectionText="MUSIC" />
-            <GridItem url="/audio_services" section={images['audio services']} sectionText="AUDIO SERVICES" />
-            <GridItem url="/about" section={images['about']} sectionText="ABOUT" />
-            <GridItem url="/support" section={images['support']} sectionText="SUPPORT" />
-            <GridItem url="/shows" section={images['shows']} sectionText="SHOWS" />
-            <GridItem url="/contact" section={images['contact']} sectionText="CONTACT" />
+            <GridItem url="/music" section={images['music']} sectionText="MUSIC" setView={props.setView} />
+            <GridItem url="/audio_services" section={images['audio services']} sectionText="AUDIO SERVICES" setView={props.setView} />
+            <GridItem url="/about" section={images['about']} sectionText="ABOUT" setView={props.setView} />
+            <GridItem url="/support" section={images['support']} sectionText="SUPPORT" setView={props.setView} />
+            <GridItem url="/shows" section={images['shows']} sectionText="SHOWS" setView={props.setView} />
+            <GridItem url="/contact" section={images['contact']} sectionText="CONTACT" setView={props.setView} />
         </ul>
     );
 }
