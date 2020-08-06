@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "dompurify": "^2.0.12",
     "next": "9.5.0",
     "next-images": "^1.4.0",
     "react": "16.13.1",

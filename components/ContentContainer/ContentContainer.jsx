@@ -8,8 +8,6 @@ const ContentContainer = props => {
         document?.querySelector('.suh').scrollTo(0, 0);
     }, [props.view]);
 
-    console.log(props.view);
-
     return (
         <div 
             className={"suh " + styles.container + ' ' + (navToggled ? 'content-container-expanded' : 'content-container')} 

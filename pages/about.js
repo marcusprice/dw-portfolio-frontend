@@ -1,5 +1,5 @@
 import { useState, useEffect, Fragment } from 'react';
-import { randomInt } from '../utils/';
+import { randomInt, convertNewlines } from '../utils/';
 import axios from 'axios';
 import ContentSection from '../components/ContentSection';
 import PageHero from '../components/PageHero';
@@ -41,8 +41,6 @@ const About = () => {
             
     }, []);
 
-    const bioText = content?.bio?.split('\n').filter(text => text !== '');
-
     const handleAccomplishments = arr => {
 
         let output = '';
@@ -66,7 +64,7 @@ const About = () => {
 
         return output;
     }
-    
+
     return (
         <ContentSection>
             <PageHero 
@@ -76,7 +74,9 @@ const About = () => {
                 imgURL={apiDomain + content?.section_image?.image?.url}  
             />
 
-            <ContentBlock title="Biography" text={bioText} />
+            <ContentBlock title="Biography">
+                {convertNewlines(content?.bio)}
+            </ContentBlock>
 
             <DualBlockContainer>
                 <DualContentBlock title="Education">
